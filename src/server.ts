@@ -4,11 +4,10 @@ const PORT = 3333
 
 const app = express()
 
-app.get("/products/:id", (request, response) => {
-  // console.log
-  const { id } = request.params
+app.get("/products", (request, response) => {
+  const {page, limit} = request.query
 
-  response.send(`Produto ${id}`)
+  response.send(`Página ${page} de ${limit}`)
 })
 
 
