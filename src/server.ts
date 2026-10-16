@@ -5,10 +5,11 @@ const PORT = 3333
 const app = express()
 app.use(express.json())
 
-app.get("/products", (request, response) => {
-  const {page, limit} = request.query
+app.post("/products", (request, response) => {
+  const {name, price } = request.query
 
-  response.send(`Página ${page} de ${limit}`)
+ // response.send(`Página ${page} de ${limit}`)
+ response.status(201).json({ name, price})
 })
 
 app.post("/products", (request,response) => {
