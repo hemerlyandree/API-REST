@@ -14,7 +14,11 @@ export class ProductsController {
 
    // throw new Error("ERRO DE EXEMPLO!")
 
-   throw new AppError("Erro ao tentar criar um produto")
+   if(!name) {
+    throw new AppError("Nome do produto é obrigatório", 400)
+   }
+
+   // throw new AppError("Erro ao tentar criar um produto")
     response.status(201).json({ name, price, user_id: request.user_id })
   }
  }
