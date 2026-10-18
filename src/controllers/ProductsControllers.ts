@@ -15,7 +15,7 @@ export class ProductsController {
    // throw new Error("ERRO DE EXEMPLO!")
     const bodySchema = z.object({
       name: z.string(),
-      price: z.number()
+      price: z.number(), //Tem a propriedade nullish que pode deixar o campo de forma opcional.
     })
 
     const { name, price } = bodySchema.parse(request.body)
